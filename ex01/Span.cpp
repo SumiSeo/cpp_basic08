@@ -42,8 +42,10 @@ void Span::addNumber(int value)
 
 int Span::shortestSpan()
 {
-    int min = v.front();
     int size = v.size();
+    if(size < 2)
+        throw std::runtime_error("Not enough to get distance");
+    int min = v.front();
     for(int i = 0 ; i < size -1 ; i++)
     {
         int cur = v[i];
@@ -57,8 +59,10 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    int max = v.front();
     int size = v.size();
+    if(size < 2)
+        throw std::runtime_error("Not enough to get distance");
+    int max = v.front();
     for(int i = 0 ; i < size -1 ; i++)
     {
         int cur = v[i];
